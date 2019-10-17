@@ -1,9 +1,38 @@
-# JavaScript Action Template
+# GitHub Actions TODO Bot
 
-This template offers an easy way to get started writing a javascript action with TypeScript compile time support, unit testing with Jest and using the GitHub Actions Toolkit.
+This action parses PR description and set commit status to success if there are no unfilled checkbox.
 
-## Getting Started
+## Using the Action
 
-See the walkthrough located [here](https://github.com/actions/toolkit/blob/master/docs/javascript-action.md).
+Create a new workflow YAML file under `.github/workflows/` folder.
 
-In addition to walking your through how to create an action, it also provides strategies for versioning, releasing and referencing your actions.
+Example:
+
+```
+name: TODO Bot
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  check:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: adriangodong/actions-todo-bot@1.0.0
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+## Development / Release
+
+* The default target branch for code changes is `master`
+* To prepare a test version:
+  * Fork the target commit into a branch
+  * Modify .gitignore file to not exclude `node_modules` folder
+  * Run `npm ci` and `npm run build`
+  * Commit all the changes
+* To release a version:
+  * Tag the target commit from the test branch
