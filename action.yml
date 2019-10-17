@@ -1,10 +1,10 @@
-name: 'Node 12 Template Action'
-description: 'Get started with Node actions'
-author: 'GitHub'
+name: 'TODO Bot'
+description: 'GitHub Actions to update status check based on Pull Request TODO checklist.'
+author: 'adriangodong'
 inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  repo-token:
+    description: 'Token for the repo. Can be passed in using {{ secrets.GITHUB_TOKEN }}'
+    required: true
 runs:
   using: 'node12'
   main: 'lib/main.js'
