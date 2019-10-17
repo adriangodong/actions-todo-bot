@@ -1,0 +1,15 @@
+name: TODO Bot
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  check:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: adriangodong/actions-todo-bot@v1-release
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
