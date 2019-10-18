@@ -1,5 +1,8 @@
-name: 'TODO Bot'
+name: 'Actions TODO Bot'
 description: 'GitHub Actions to update status check based on Pull Request TODO checklist.'
+branding:
+  icon: 'check-square'
+  color: 'green'
 author: 'adriangodong'
 inputs: 
   repo-token:
