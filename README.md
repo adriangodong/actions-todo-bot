@@ -1,4 +1,6 @@
 # GitHub Actions TODO Bot
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fadriangodong%2Factions-todo-bot.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fadriangodong%2Factions-todo-bot?ref=badge_shield)
+
 
 This action parses PR description and set commit status to success if there are no unfilled checkbox.
 
@@ -36,3 +38,7 @@ jobs:
   * Commit all the changes
 * To release a version:
   * Tag the target commit from the test branch
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fadriangodong%2Factions-todo-bot.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fadriangodong%2Factions-todo-bot?ref=badge_large)
