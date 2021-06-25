@@ -1,0 +1,24 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 99
+  assignees:
+  - adriangodong
+  versioning-strategy: increase
+  ignore:
+  - dependency-name: "@types/node"
+    versions:
+    - 15.0.0
+  - dependency-name: typescript
+    versions:
+    - 3.9.7
+    - 4.1.3
+    - 4.1.4
+    - 4.1.5
+    - 4.2.2
+    - 4.2.3
+  rebase-strategy: disabled
