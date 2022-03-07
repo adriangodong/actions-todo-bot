@@ -10,7 +10,7 @@ async function run()
     try
     {
         const args = getAndValidateArgs();
-        const client = new github.GitHub(args.repoToken);
+        const octokit = github.getOctokit(args.repoToken);
         const context = github.context;
         const pull_request = context.payload.pull_request;
 
@@ -21,7 +21,7 @@ async function run()
 
         const incompleteTaskListItem = getIncompleteCount(pull_request.body || "");
 
-        await client.repos.createStatus({
+        await octokit.rest.repos.createCommitStatus({
             owner: context.issue.owner,
             repo: context.issue.repo,
             sha: pull_request.head.sha,
@@ -33,7 +33,7 @@ async function run()
     }
     catch (error)
     {
-        core.setFailed(error.message);
+        core.setFailed((error as any).message);
     }
 }
 
