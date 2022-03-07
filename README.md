@@ -30,9 +30,9 @@ jobs:
 
 * The default target branch for code changes is `master`
 * To prepare a test version:
-  * Fork the target commit into a branch
+  * Fork the target commit into a release branch
   * Modify .gitignore file to not exclude `node_modules` folder
-  * Run `npm ci` and `npm run build`
+  * Run `npm ci --only=prod` and `npm run build`
   * Commit all the changes
 * To release a version:
-  * Tag the target commit from the test branch
+  * Tag the target commit from the release branch
