@@ -1,8 +1,8 @@
 {
-  "name": "node12-template-action",
+  "name": "actions-todo-bot",
   "version": "0.0.0",
   "private": true,
-  "description": "Node 12 template action",
+  "description": "TODO Bot for GitHub Actions",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/node12-template.git"
+    "url": "https://github.com/adriangodong/actions-todo-bot"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "GitHub",
+  "author": "adriangodong",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.1",
